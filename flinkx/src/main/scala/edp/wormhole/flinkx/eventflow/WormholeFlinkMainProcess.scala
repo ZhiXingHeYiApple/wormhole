@@ -45,7 +45,7 @@ import org.apache.flink.api.common.typeinfo.TypeInformation
 import org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment, _}
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011
 import org.apache.flink.table.api.scala.StreamTableEnvironment
 import org.apache.flink.table.api.{TableEnvironment, Types}
 import org.apache.flink.types.Row
@@ -135,7 +135,7 @@ class WormholeFlinkMainProcess(config: WormholeFlinkxConfig, umsFlowStart: Ums) 
     }
     val flinkxConfigUtils = new WormholeFlinkxConfigUtils(config)
     val topics = flinkxConfigUtils.getKafkaTopicList
-    val myConsumer = new FlinkKafkaConsumer010[(String, String, String, Int, Long)](topics, new WormholeDeserializationStringSchema, properties)
+    val myConsumer = new FlinkKafkaConsumer011[(String, String, String, Int, Long)](topics, new WormholeDeserializationStringSchema, properties)
 
     val specificStartOffsets = flinkxConfigUtils.getTopicPartitionOffsetMap
     myConsumer.setStartFromSpecificOffsets(specificStartOffsets)

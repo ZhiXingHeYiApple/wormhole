@@ -32,7 +32,7 @@
         </dependency>
         <dependency>
             <groupId>edp.wormhole</groupId>
-            <artifactId>wormhole-kafka-010-2</artifactId>
+            <artifactId>wormhole-kafka-011</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
